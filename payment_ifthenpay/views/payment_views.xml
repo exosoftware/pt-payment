@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="acquirer_form_ifthenpay" model="ir.ui.view">
+        <field name="name">acquirer.form.ifthenpay</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment_portugal.acquirer_form_portugal" />
+        <field name="arch" type="xml">
+            <field name="pt_pay_method" position="after">
+                <field name="ifthenpay_entity"
+                       attrs="{'invisible': [('provider', '!=', 'ifthenpay')], 'required': [('pt_pay_method', '=', 'mb'), ('provider', '=', 'ifthenpay'), ('state', '!=', 'disabled')]}"/>
+                <field name="ifthenpay_subentity"
+                       attrs="{'invisible':[('provider', '!=', 'ifthenpay')],  'required': [('pt_pay_method', '=', 'mb'), ('provider', '=', 'ifthenpay'), ('state', '!=', 'disabled')]}" />
+                <field
+                    name="ifthenpay_backoffice_key"
+                    password="True"
+                    attrs="{'invisible':[('provider', '!=', 'ifthenpay')], 'required':[('pt_pay_method', '=', 'mb'), ('provider', '=', 'ifthenpay'), ('state', '!=', 'disabled')]}"
+                />
+                <label for="ifthenpay_antiphishing_key"
+                    attrs="{'invisible':[('provider', '!=', 'ifthenpay')]}"/>
+                <div class="o_row">
+                    <field name="ifthenpay_antiphishing_key" placeholder="1234-abcd-1a2b"
+                        attrs="{'invisible':[('provider', '!=', 'ifthenpay')], 'required':[('provider', '=', 'ifthenpay'), ('state', '!=', 'disabled')]}"/>
+                    <button
+                        attrs="{'invisible' : ['|', ('ifthenpay_antiphishing_key', '!=', False), ('provider', '!=', 'ifthenpay')]}"
+                        icon="fa-key"
+                        name="action_generate_ifthenpay_antiphishing_key"
+                        type="object"
+                        string="Generate Anti-Phishing key"
+                    />
+                </div>
+                <field
+                    name="ifthenpay_mbway_key"
+                    attrs="{'invisible': ['|', ('provider', '!=', 'ifthenpay'), ('pt_pay_method', '!=', 'mbway')], 'required': [('pt_pay_method', '=', 'mbway'), ('provider', '=', 'ifthenpay'), ('state', '!=', 'disabled')]}" />
+                <field
+                    name="ifthenpay_mbway_description"
+                    attrs="{'invisible': ['|', ('provider', '!=', 'ifthenpay'), ('pt_pay_method', '!=', 'mbway')], 'required': [('pt_pay_method', '=', 'mbway'), ('provider', '=', 'ifthenpay'), ('state', '!=', 'disabled')]}"
+                    placeholder="Ex: Nome da Empresa" />
+                <field
+                    name="pt_callback_url"
+                    attrs="{'invisible':[('provider', '!=', 'ifthenpay')]}"
+                />
+
+            </field>
+        </field>
+    </record>
+
+</odoo>
