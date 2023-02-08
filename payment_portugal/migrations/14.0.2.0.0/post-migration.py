@@ -1,5 +1,6 @@
 # Copyright 2021 Exo Software
 import logging
+
 from openupgradelib import openupgrade
 
 _logger = logging.getLogger(__name__)
@@ -7,7 +8,7 @@ _logger = logging.getLogger(__name__)
 
 @openupgrade.migrate()
 def migrate(env, version):
-    """ A fix for the wrong simplified invoice AT code"""
+    """A fix for the wrong simplified invoice AT code"""
 
     openupgrade.logged_query(
         env.cr,
