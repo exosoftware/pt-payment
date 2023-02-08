@@ -16,9 +16,17 @@
         <input type="hidden" name='currency' t-att-value='currency.name' />
     </template>
 
-    <template id="payment_confirmation_status_multibanco" inherit_id="website_sale.payment_confirmation_status">
-        <xpath expr="//t[@t-raw='payment_tx_id.acquirer_id.pending_msg']" position="attributes">
-            <attribute name="t-raw">payment_tx_id.get_pending_message_to_display()</attribute>
+    <template
+        id="payment_confirmation_status_multibanco"
+        inherit_id="website_sale.payment_confirmation_status"
+    >
+        <xpath
+            expr="//t[@t-raw='payment_tx_id.acquirer_id.pending_msg']"
+            position="attributes"
+        >
+            <attribute
+                name="t-raw"
+            >payment_tx_id.get_pending_message_to_display()</attribute>
         </xpath>
     </template>
 
@@ -26,8 +34,13 @@
         id="payment_confirmation_status_multibanco_portal"
         inherit_id="payment.payment_confirmation_status"
     >
-        <xpath expr="//span[@t-if='payment_tx_id.acquirer_id.pending_msg']" position="attributes">
-            <attribute name="t-raw">payment_tx_id.get_pending_message_to_display()</attribute>
+        <xpath
+            expr="//span[@t-if='payment_tx_id.acquirer_id.pending_msg']"
+            position="attributes"
+        >
+            <attribute
+                name="t-raw"
+            >payment_tx_id.get_pending_message_to_display()</attribute>
         </xpath>
     </template>
 

@@ -9,8 +9,10 @@
         <field name="arch" type="xml">
             <group name="accounting_entries" position="after">
                 <group string="Multibanco" name="multibanco">
-                    <field name="multibanco_invoice_exception"
-                            attrs="{'invisible': [('parent_id', '!=', False)]}"/>
+                    <field
+                        name="multibanco_invoice_exception"
+                        attrs="{'invisible': [('parent_id', '!=', False)]}"
+                    />
                 </group>
             </group>
         </field>
