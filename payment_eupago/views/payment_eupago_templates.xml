@@ -13,6 +13,8 @@
         <input type="hidden" name='reference' t-att-value='reference' />
         <input type="hidden" name='amount' t-att-value='amount' />
         <input type="hidden" name='currency' t-att-value='currency.name' />
+        <input type="hidden" name="provider" t-att-value="acquirer.provider" />
+        <input type="hidden" name="company_id" t-att-value="acquirer.company_id.id" />
         <!--<input type="hidden" name='acquirer_reference' t-att-value='acquirer_reference' />-->
     </template>
 </odoo>
