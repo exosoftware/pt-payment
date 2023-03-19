@@ -9,7 +9,7 @@
     "category": "Accounting/Payment Acquirers",
     "sequence": 391,
     "summary": "Payment Acquirer: Eupago Implementation",
-    "version": "14.0.2.1.0",
+    "version": "14.0.2.2.0",
     "author": "Exo Software",
     "website": "https://exosoftware.pt",
     "depends": ["payment_portugal"],
