@@ -11,7 +11,7 @@
     "version": "14.0.2.1.0",
     "author": "Exo Software",
     "website": "https://exosoftware.pt",
-    "depends": ["payment", "l10n_pt"],
+    "depends": ["website_sale", "l10n_pt"],  # TODO: replace website_sale -> sale
     "data": [
         "security/ir.model.access.csv",
         "data/payment_icon_data.xml",
