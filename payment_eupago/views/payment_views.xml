@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="acquirer_form_eupago" model="ir.ui.view">
+        <field name="name">acquirer.form.eupago</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment_portugal.acquirer_form_portugal" />
+        <field name="arch" type="xml">
+            <field name="pt_pay_method" position="after">
+
+                <field
+                    name="eupago_client_id"
+                    attrs="{'required':[('provider', '=', 'eupago'), ('state', '!=', 'disabled')],
+                        'invisible':[('provider', '!=', 'eupago')]}"
+                />
+                <field
+                    name="eupago_client_secret"
+                    password="True"
+                    attrs="{'required':[('provider', '=', 'eupago'), ('state', '!=', 'disabled')],
+                        'invisible':[('provider', '!=', 'eupago')]}"
+                />
+                <field
+                    name="eupago_api_key"
+                    password="True"
+                    attrs="{'required':[('provider', '=', 'eupago'), ('state', '!=', 'disabled')],
+                    'invisible':[('provider', '!=', 'eupago')]}"
+                />
+                <field
+                    name="pt_callback_url"
+                    attrs="{'invisible':[('provider', '!=', 'eupago')]}"
+                />
+            </field>
+        </field>
+    </record>
+
+</odoo>
