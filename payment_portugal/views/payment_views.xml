@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="acquirer_form_portugal" model="ir.ui.view">
+        <field name="name">acquirer.form.portugal</field>
+        <field name="model">payment.acquirer</field>
+        <field name="inherit_id" ref="payment.payment_acquirer_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page
+                    string="Synchronization"
+                    name="pt_sync"
+                    attrs="{'invisible': [('provider', 'not in', ('ifthenpay', 'easypay', 'eupago'))]}"
+                >
+                    <group>
+                    <group name="pt_sync">
+                        <field name="pt_last_sync" />
+                    </group>
+                    <group>
+                        <button
+                                type="object"
+                                class="btn btn-primary"
+                                name="action_get_payments"
+                                string="Sync. Payments"
+                            />
+                    </group>
+                    </group>
+                </page>
+            </xpath>
+
+            <xpath expr="//group[@name='acquirer']" position="inside">
+                <group
+                    name="portugal"
+                    attrs="{'invisible': [('provider', 'not in', ('ifthenpay', 'easypay', 'eupago'))]}"
+                >
+                    <field
+                        name="pt_pay_method"
+                        string="Payment Method"
+                        attrs="{'required':[('provider', '=', 'ifthenpay'), ('state', '!=', 'disabled')]}"
+                    />
+                </group>
+            </xpath>
+
+            <xpath expr="//group[@name='availability']" position="inside">
+                <group
+                    string="Other"
+                    name="other"
+                    attrs="{'invisible': [('provider', 'not in', ('ifthenpay', 'easypay', 'eupago'))]}"
+                >
+                    <field
+                        name="multibanco_invoice"
+                        attrs="{'invisible':[('pt_pay_method', '!=', 'mb')]}"
+                    />
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <!--
+    <record id="transaction_portugal" model="ir.ui.view">
+        <field name="name">payment.transaction.search.portugal</field>
+        <field name="model">payment.transaction</field>
+        <field name="inherit_id" ref="payment.payment_transaction" />
+        <field name="arch" type="xml">
+            <field name="partner_name" position="after">
+                <filter
+                    name="multibanco"
+                    string="Multibanco"
+                    domain="[('pt_pay_method','=', 'mb')]"
+                />
+                <filter
+                    name="mbway"
+                    string="MB WAY"
+                    domain="[('pt_pay_method','=', 'mbway')]"
+                />
+                <filter
+                    name="payshop"
+                    string="Payshop"
+                    domain="[('pt_pay_method','=', 'payshop')]"
+                />
+            <separator />
+            </field>
+        </field>
+    </record>
+    -->
+
+</odoo>
