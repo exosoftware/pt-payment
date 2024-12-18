@@ -1,0 +1,152 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* payment_eupago
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 15.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-11-10 16:49+0000\n"
+"PO-Revision-Date: 2022-11-10 16:49+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: payment_eupago
+#: code:addons/payment_eupago/models/payment.py:0
+#, python-format
+msgid "; multiple order found"
+msgstr ""
+
+#. module: payment_eupago
+#: code:addons/payment_eupago/models/payment.py:0
+#, python-format
+msgid "; no order found"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_acquirer__eupago_api_key
+msgid "API Key"
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,pending_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "Amount:"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_acquirer__eupago_client_id
+msgid "Client ID"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_acquirer__eupago_client_secret
+msgid "Client Secret"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_acquirer__display_name
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_transaction__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,pending_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "Entity:"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields.selection,name:payment_eupago.selection__payment_acquirer__provider__eupago
+msgid "Eupago"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_acquirer__id
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_transaction__id
+msgid "ID"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_acquirer____last_update
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_transaction____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: payment_eupago
+#: model:payment.acquirer,display_as:payment_eupago.payment_acquirer_eupago_mb
+msgid "MB Entity/Reference"
+msgstr ""
+
+#. module: payment_eupago
+#: model:payment.acquirer,name:payment_eupago.payment_acquirer_eupago_mb
+msgid "Multibanco (Eupago)"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_acquirer__pt_pay_method
+msgid "PT Payment Method"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model,name:payment_eupago.model_payment_acquirer
+msgid "Payment Acquirer"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model,name:payment_eupago.model_payment_transaction
+msgid "Payment Transaction"
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,pending_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "Please complete your Multibanco payment:"
+msgstr ""
+
+#. module: payment_eupago
+#: model:ir.model.fields,field_description:payment_eupago.field_payment_acquirer__provider
+msgid "Provider"
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,pending_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "Reference:"
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,auth_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "Your payment has been authorized."
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,cancel_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "Your payment has been cancelled."
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,done_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "Your payment has been successfully processed. Thank you!"
+msgstr ""
+
+#. module: payment_eupago
+#: code:addons/payment_eupago/models/payment.py:0
+#, python-format
+msgid "received data for reference %s"
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,pending_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "{amount}"
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,pending_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "{entity}"
+msgstr ""
+
+#. module: payment_eupago
+#: model_terms:payment.acquirer,pending_msg:payment_eupago.payment_acquirer_eupago_mb
+msgid "{reference}"
+msgstr ""
