@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+    <record id="res_config_settings_view_form_pt" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.pt</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form" />
+        <field name="arch" type="xml">
+            <xpath
+                expr="//div[@id='pay_invoice_online_setting_container']"
+                position="inside"
+            >
+                <div
+                    class="col-12 col-lg-6 o_setting_box"
+                    title="Default Payment Provider"
+                >
+                    <div class="o_setting_left_pane" />
+                    <div class="o_setting_right_pane">
+                        <label for="l10n_pt_mb_payment_provider" />
+                        <div class="text-muted">
+                            This payment provider will be the default MB provider for invoices
+                        </div>
+                        <div class="content-group">
+                            <div class="row mt16 ml4">
+                                <field name="l10n_pt_mb_payment_provider" />
+                            </div>
+                            <div class="row mt16 ml4">
+                                <field name="l10n_pt_multibanco_invoice" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

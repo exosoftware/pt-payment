@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+
+    <record id="payment_icon_mb" model="payment.icon">
+        <field name="name">Multibanco</field>
+        <field
+            name="image"
+            type="base64"
+            file="payment_portugal/static/img/multibanco_icon.png"
+        />
+    </record>
+
+    <record id="payment_icon_mbway" model="payment.icon">
+        <field name="name">MB Way</field>
+        <field
+            name="image"
+            type="base64"
+            file="payment_portugal/static/img/mbway_icon.png"
+        />
+    </record>
+
+    <record id="payment_icon_payshop" model="payment.icon">
+        <field name="name">Payshop</field>
+        <field
+            name="image"
+            type="base64"
+            file="payment_portugal/static/img/payshop_icon.png"
+        />
+    </record>
+
+</odoo>
