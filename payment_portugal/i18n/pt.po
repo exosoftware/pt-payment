@@ -4,11 +4,11 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Odoo Server 14.0\n"
+"Project-Id-Version: Odoo Server 19.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-24 13:41+0000\n"
-"PO-Revision-Date: 2023-07-24 14:43+0100\n"
-"Last-Translator: João Costa <joao.costa@exo.pt>\n"
+"POT-Creation-Date: 2026-07-14 12:18+0000\n"
+"PO-Revision-Date: 2026-07-14 12:18+0000\n"
+"Last-Translator: Diogo Pereira\n"
 "Language-Team: \n"
 "Language: pt_PT\n"
 "MIME-Version: 1.0\n"
@@ -39,8 +39,20 @@ msgstr "<span class=\"mb-data-label\">Referência:</span>"
 
 #. module: payment_portugal
 #: model:ir.model.fields.selection,name:payment_portugal.selection__payment_provider__multibanco_invoice__all
+#: model:ir.model.fields.selection,name:payment_portugal.selection__res_company__l10n_pt_multibanco_invoice__all
 msgid "All Customers"
 msgstr "Todos os clientes"
+
+#. module: payment_portugal
+#: model_terms:ir.ui.view,arch_db:payment_portugal.res_config_settings_view_form_pt
+msgid "Auto-generate MB Reference"
+msgstr "Gerar Referência MB Automaticamente"
+
+#. module: payment_portugal
+#: model:ir.model.fields,field_description:payment_portugal.field_res_company__l10n_pt_mb_report_auto_generate
+#: model:ir.model.fields,field_description:payment_portugal.field_res_config_settings__l10n_pt_mb_report_auto_generate
+msgid "Auto-generate MB Reference on Print/Send"
+msgstr "Gerar Referência MB Automaticamente ao Imprimir/Enviar"
 
 #. module: payment_portugal
 #: model:ir.model.fields,field_description:payment_portugal.field_payment_provider__pt_callback_url
@@ -49,8 +61,17 @@ msgstr ""
 
 #. module: payment_portugal
 #. odoo-python
+#: code:addons/payment_portugal/models/sale_order.py:0
+msgid ""
+"Can't generate MB reference for invoice %s. Invoice already has a related MB"
+" transaction."
+msgstr ""
+"Não pode gerar referência multibanco para a fatura %s. A fatura já tem uma "
+"transação multibanco associada."
+
+#. module: payment_portugal
+#. odoo-python
 #: code:addons/payment_portugal/models/account_move.py:0
-#, python-format
 msgid ""
 "Can't generate multibanco references. No invoices match the criteria for "
 "multibanco reference creation."
@@ -61,7 +82,7 @@ msgstr ""
 #. module: payment_portugal
 #. odoo-python
 #: code:addons/payment_portugal/models/account_move.py:0
-#, python-format
+#: code:addons/payment_portugal/models/sale_order.py:0
 msgid ""
 "Can't generate multibanco references. You must have at least one active "
 "payment provider set up with Multibanco payment method."
@@ -70,15 +91,24 @@ msgstr ""
 "de pagamento ativa com o método de pagamento Multibanco."
 
 #. module: payment_portugal
-#: model_terms:ir.ui.view,arch_db:payment_portugal.account_generate_multibanco_view
-msgid "Cancel"
-msgstr "Cancelar"
+#: model:ir.actions.server,name:payment_portugal.ir_cron_check_multibanco_date_ir_actions_server
+msgid "Check for Multibanco Reference dates"
+msgstr "Verificar datas de referências Multibanco"
 
 #. module: payment_portugal
 #: model:ir.actions.server,name:payment_portugal.ir_cron_get_payments_ir_actions_server
-#: model:ir.cron,cron_name:payment_portugal.ir_cron_get_payments
 msgid "Check for new MB, MB WAY or Payshop payments"
 msgstr "Verificar por novos pagamentos MB, MB WAY ou Payshop"
+
+#. module: payment_portugal
+#: model:ir.model,name:payment_portugal.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: payment_portugal
+#: model:ir.model,name:payment_portugal.model_res_config_settings
+msgid "Config Settings"
+msgstr "Definições de Configuração"
 
 #. module: payment_portugal
 #: model:ir.model,name:payment_portugal.model_res_partner
@@ -86,17 +116,19 @@ msgid "Contact"
 msgstr "Contacto"
 
 #. module: payment_portugal
-#: model:ir.model.fields,field_description:payment_portugal.field_account_generate_multibanco_wizard__create_uid
-msgid "Created by"
-msgstr "Criado por"
+#: model:ir.model,website_form_label:payment_portugal.model_res_partner
+msgid "Create a Customer"
+msgstr "Criar um Cliente"
 
 #. module: payment_portugal
-#: model:ir.model.fields,field_description:payment_portugal.field_account_generate_multibanco_wizard__create_date
-msgid "Created on"
-msgstr "Criado em"
+#: model_terms:ir.ui.view,arch_db:payment_portugal.res_config_settings_view_form_pt
+msgid "Default Payment Provider"
+msgstr "Instituição de Pagamento Predefinida"
 
 #. module: payment_portugal
 #: model:ir.model.fields,help:payment_portugal.field_payment_provider__multibanco_invoice
+#: model:ir.model.fields,help:payment_portugal.field_res_company__l10n_pt_multibanco_invoice
+#: model:ir.model.fields,help:payment_portugal.field_res_config_settings__l10n_pt_multibanco_invoice
 msgid ""
 "Determines if and how MB payment information is automatically added to every "
 "issued sales invoice.\n"
@@ -116,9 +148,15 @@ msgstr ""
 "faturas' ativo."
 
 #. module: payment_portugal
-#: model:ir.model.fields,field_description:payment_portugal.field_account_generate_multibanco_wizard__display_name
+#: model:ir.model.fields,field_description:payment_portugal.field_account_move__display_name
+#: model:ir.model.fields,field_description:payment_portugal.field_payment_provider__display_name
+#: model:ir.model.fields,field_description:payment_portugal.field_payment_transaction__display_name
+#: model:ir.model.fields,field_description:payment_portugal.field_res_company__display_name
+#: model:ir.model.fields,field_description:payment_portugal.field_res_config_settings__display_name
+#: model:ir.model.fields,field_description:payment_portugal.field_res_partner__display_name
+#: model:ir.model.fields,field_description:payment_portugal.field_sale_order__display_name
 msgid "Display Name"
-msgstr "Nome de exibição"
+msgstr "Nome a Apresentar"
 
 #. module: payment_portugal
 #: model_terms:ir.ui.view,arch_db:payment_portugal.mb_payment_info
@@ -131,23 +169,18 @@ msgid "Entity"
 msgstr "Entidade"
 
 #. module: payment_portugal
-#: model_terms:ir.ui.view,arch_db:payment_portugal.account_generate_multibanco_view
-msgid "Generate"
-msgstr "Gerar"
+#: model_terms:ir.ui.view,arch_db:payment_portugal.view_move_form
+msgid "Generate MB Ref."
+msgstr "Gerar Ref. MB"
 
 #. module: payment_portugal
-#: model:ir.actions.act_window,name:payment_portugal.action_account_generate_multibanco
-#: model_terms:ir.ui.view,arch_db:payment_portugal.account_generate_multibanco_view
-msgid "Generate Multibanco References"
-msgstr "Gerar Referências Multibanco"
-
-#. module: payment_portugal
-#: model:ir.model,name:payment_portugal.model_account_generate_multibanco_wizard
-msgid "Generate Multibanco References for Invoices"
-msgstr "Gerar Referências Multibanco para Faturas"
-
-#. module: payment_portugal
-#: model:ir.model.fields,field_description:payment_portugal.field_account_generate_multibanco_wizard__id
+#: model:ir.model.fields,field_description:payment_portugal.field_account_move__id
+#: model:ir.model.fields,field_description:payment_portugal.field_payment_provider__id
+#: model:ir.model.fields,field_description:payment_portugal.field_payment_transaction__id
+#: model:ir.model.fields,field_description:payment_portugal.field_res_company__id
+#: model:ir.model.fields,field_description:payment_portugal.field_res_config_settings__id
+#: model:ir.model.fields,field_description:payment_portugal.field_res_partner__id
+#: model:ir.model.fields,field_description:payment_portugal.field_sale_order__id
 msgid "ID"
 msgstr "ID"
 
@@ -162,24 +195,14 @@ msgid "Journal Entry"
 msgstr "Entrada do Jornal"
 
 #. module: payment_portugal
-#: model:ir.model.fields,field_description:payment_portugal.field_account_generate_multibanco_wizard____last_update
-msgid "Last Modified on"
-msgstr "Última modificação"
-
-#. module: payment_portugal
 #: model:ir.model.fields,field_description:payment_portugal.field_payment_provider__pt_last_sync
 msgid "Last Sync. Payment"
 msgstr "Última Sincronização de Pagamentos"
 
 #. module: payment_portugal
-#: model:ir.model.fields,field_description:payment_portugal.field_account_generate_multibanco_wizard__write_uid
-msgid "Last Updated by"
-msgstr "Última atualização por"
-
-#. module: payment_portugal
-#: model:ir.model.fields,field_description:payment_portugal.field_account_generate_multibanco_wizard__write_date
-msgid "Last Updated on"
-msgstr "Última atualização em"
+#: model_terms:ir.ui.view,arch_db:payment_portugal.view_move_form
+msgid "Limit Date"
+msgstr "Data Limite"
 
 #. module: payment_portugal
 #: model:ir.model.fields,field_description:payment_portugal.field_payment_transaction__multibanco_entity
@@ -188,13 +211,28 @@ msgstr "Entidade"
 
 #. module: payment_portugal
 #: model:ir.model.fields,field_description:payment_portugal.field_payment_provider__multibanco_invoice
+#: model:ir.model.fields,field_description:payment_portugal.field_res_company__l10n_pt_multibanco_invoice
+#: model:ir.model.fields,field_description:payment_portugal.field_res_config_settings__l10n_pt_multibanco_invoice
 msgid "MB Entity/Reference on Invoices"
 msgstr "Entidade/Referência nas faturas"
+
+#. module: payment_portugal
+#: model:ir.model.fields,field_description:payment_portugal.field_account_bank_statement_line__l10n_pt_mb_payment_provider
+#: model:ir.model.fields,field_description:payment_portugal.field_account_move__l10n_pt_mb_payment_provider
+#: model:ir.model.fields,field_description:payment_portugal.field_res_company__l10n_pt_mb_payment_provider
+#: model:ir.model.fields,field_description:payment_portugal.field_res_config_settings__l10n_pt_mb_payment_provider
+msgid "MB Payment Provider"
+msgstr "Instituição de Pagamento MB"
 
 #. module: payment_portugal
 #: model:ir.model.fields.selection,name:payment_portugal.selection__payment_provider__pt_pay_method__mbway
 msgid "MB WAY"
 msgstr "MB WAY"
+
+#. module: payment_portugal
+#: model:payment.method,name:payment_portugal.payment_icon_mbway
+msgid "MB Way"
+msgstr "MB Way"
 
 #. module: payment_portugal
 #: model:ir.model.fields,field_description:payment_portugal.field_res_partner__multibanco_invoice_exception
@@ -204,19 +242,27 @@ msgstr "Exceção Multibanco nas faturas"
 
 #. module: payment_portugal
 #: model:ir.model.fields.selection,name:payment_portugal.selection__payment_provider__pt_pay_method__mb
+#: model:payment.method,name:payment_portugal.payment_icon_mb
 #: model_terms:ir.ui.view,arch_db:payment_portugal.view_partner_form_mb
 msgid "Multibanco"
 msgstr "Multibanco"
 
 #. module: payment_portugal
+#: model:ir.model.fields,field_description:payment_portugal.field_payment_transaction__multibanco_limit_date
+msgid "Multibanco Limit Date"
+msgstr "Data Limite Multibanco"
+
+#. module: payment_portugal
 #: model:ir.model.fields.selection,name:payment_portugal.selection__payment_provider__multibanco_invoice__none
+#: model:ir.model.fields.selection,name:payment_portugal.selection__res_company__l10n_pt_multibanco_invoice__none
 msgid "No Customers"
 msgstr "Nenhum cliente"
 
 #. module: payment_portugal
-#: model_terms:ir.ui.view,arch_db:payment_portugal.provider_form_portugal
-msgid "Other"
-msgstr "Outro"
+#. odoo-python
+#: code:addons/payment_portugal/controllers/main.py:0
+msgid "No provider code for the selected payment method."
+msgstr "Sem código de fornecedor para o método de pagamento selecionado."
 
 #. module: payment_portugal
 #: model:ir.model.fields,field_description:payment_portugal.field_payment_provider__pt_pay_method
@@ -240,9 +286,27 @@ msgid "Payment Transaction"
 msgstr "Transação"
 
 #. module: payment_portugal
+#. odoo-javascript
+#: code:addons/payment_portugal/static/src/js/payment_form.js:0
+msgid "Payment processing failed"
+msgstr "Falha no processamento do pagamento"
+
+#. module: payment_portugal
+#: model:payment.method,name:payment_portugal.payment_icon_payshop
+msgid "Payshop"
+msgstr "Payshop"
+
+#. module: payment_portugal
+#: model:ir.model.fields,field_description:payment_portugal.field_payment_transaction__mbway_phone_number
 #: model_terms:ir.ui.view,arch_db:payment_portugal.mbway_inline_form
 msgid "Phone Number"
 msgstr "Número de telemóvel"
+
+#. module: payment_portugal
+#. odoo-python
+#: code:addons/payment_portugal/controllers/main.py:0
+msgid "Please provide a phone number."
+msgstr "Por favor, forneça um número de telemóvel."
 
 #. module: payment_portugal
 #: model:ir.model.fields,field_description:payment_portugal.field_payment_provider__provider
@@ -250,14 +314,15 @@ msgid "Provider"
 msgstr "Provedor"
 
 #. module: payment_portugal
-#: model_terms:ir.ui.view,arch_db:payment_portugal.view_move_form
-msgid "Reference"
-msgstr "Referência"
+#: model:ir.model.fields,field_description:payment_portugal.field_account_bank_statement_line__readonly_mb_payment_provider
+#: model:ir.model.fields,field_description:payment_portugal.field_account_move__readonly_mb_payment_provider
+msgid "Readonly Mb Payment Provider"
+msgstr ""
+# TODO: campo técnico interno (sempre invisible na vista), confirmar se carece de tradução
 
 #. module: payment_portugal
 #. odoo-python
 #: code:addons/payment_portugal/models/payment.py:0
-#, python-format
 msgid "Required fields not filled: %s"
 msgstr "Campos obrigatórios não preenchidos: %s"
 
@@ -301,32 +366,9 @@ msgstr ""
 "pagamento anterior."
 
 #. module: payment_portugal
-#. odoo-python
-#: code:addons/payment_portugal/models/payment.py:0
-#, python-format
-msgid "There can only be 1 active MB WAY provider"
-msgstr "Pode apenas existir 1 instituição de pagamento MB WAY ativa"
-
-#. module: payment_portugal
-#. odoo-python
-#: code:addons/payment_portugal/models/payment.py:0
-#, python-format
-msgid "There can only be 1 active Multibanco provider"
-msgstr "Pode apenas existir 1 instituição de pagamento Multibanco ativa"
-
-#. module: payment_portugal
-#. odoo-python
-#: code:addons/payment_portugal/models/payment.py:0
-#, python-format
-msgid "Timeout"
+#: model_terms:ir.ui.view,arch_db:payment_portugal.res_config_settings_view_form_pt
+msgid "This payment provider will be the default MB provider for invoices"
 msgstr ""
-
-#. module: payment_portugal
-#. odoo-python
-#: code:addons/payment_portugal/models/payment.py:0
-#, python-format
-msgid "Too many redirects"
-msgstr "Demasiados redireccionamentos"
 
 #. module: payment_portugal
 #: model_terms:ir.ui.view,arch_db:payment_portugal.view_move_form
@@ -334,30 +376,27 @@ msgid "Transactions"
 msgstr "Transações"
 
 #. module: payment_portugal
-#: model:ir.model.fields,field_description:payment_portugal.field_account_generate_multibanco_wizard__validity
-msgid "Validity (days)"
+#: model:ir.model.fields,field_description:payment_portugal.field_payment_provider__pt_validity_days
+msgid "Validity(Days)"
 msgstr "Validade (Dias)"
 
 #. module: payment_portugal
-#. odoo-python
-#: code:addons/payment_portugal/models/payment.py:0
-#, python-format
+#: model_terms:ir.ui.view,arch_db:payment_portugal.res_config_settings_view_form_pt
 msgid ""
-"You can't generate MB WAY payment request for amounts smaller than 50 cents"
-msgstr "Não pode gerar pagamentos MB WAY para valores inferiores a 50 cêntimos"
+"When a Quotation is printed or sent without a Multibanco reference yet, "
+"generate one automatically"
+msgstr ""
+"Quando um Orçamento é impresso ou enviado sem ainda ter uma referência "
+"Multibanco, uma é gerada automaticamente"
 
 #. module: payment_portugal
-#. odoo-python
-#: code:addons/payment_portugal/models/payment.py:0
-#, python-format
-msgid "You can't generate MB references for amounts smaller than 1 euro"
-msgstr "Não se pode gerar referências MB para montantes inferiores a 1 euro"
-
-#~ msgid "%s Error - %s"
-#~ msgstr "%s Erro - %s"
-
-#~ msgid "Acquirer"
-#~ msgstr "Instituição de pagamento"
-
-#~ msgid "Payshop"
-#~ msgstr "Payshop"
+#: model:ir.model.fields,help:payment_portugal.field_res_company__l10n_pt_mb_report_auto_generate
+#: model:ir.model.fields,help:payment_portugal.field_res_config_settings__l10n_pt_mb_report_auto_generate
+msgid ""
+"When a Quotation is printed or sent without "
+"having a Multibanco reference yet, generate one automatically so "
+"the document shows the MB payment info."
+msgstr ""
+"Quando um Orçamento é impresso ou enviado sem ainda ter "
+"uma referência Multibanco, uma é gerada automaticamente para que o documento "
+"mostre a informação de pagamento MB."
