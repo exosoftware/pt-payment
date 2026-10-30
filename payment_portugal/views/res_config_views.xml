@@ -27,6 +27,13 @@
                         />
                     </div>
                 </setting>
+                <setting
+                    company_dependent="1"
+                    help="When a Quotation is printed or sent without a Multibanco reference yet, generate one automatically"
+                    title="Auto-generate MB Reference"
+                >
+                    <field name="l10n_pt_mb_report_auto_generate" />
+                </setting>
             </xpath>
         </field>
     </record>

@@ -9,7 +9,7 @@
     "category": "Accounting/Payment Providers",
     "sequence": 391,
     "summary": "A Portuguese payment provider that can handle MB and MB WAY payments",
-    "version": "19.0.3.1.0",
+    "version": "19.0.3.2.0",
     "author": "Exo Software",
     "website": "https://github.com/exosoftware/portugal-payment",
     "depends": ["payment_portugal"],

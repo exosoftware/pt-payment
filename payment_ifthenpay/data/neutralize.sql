@@ -5,4 +5,5 @@ UPDATE payment_provider
        ifthenpay_backoffice_key = NULL,
        ifthenpay_antiphishing_key = NULL,
        ifthenpay_mbway_key = NULL,
-       ifthenpay_mbway_description = NULL;
+       ifthenpay_mbway_description = NULL,
+       is_published = false;

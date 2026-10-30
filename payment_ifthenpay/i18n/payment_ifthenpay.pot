@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Exo PT+\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-24 13:43+0000\n"
-"PO-Revision-Date: 2023-07-24 13:43+0000\n"
+"POT-Creation-Date: 2026-07-14 12:17+0000\n"
+"PO-Revision-Date: 2026-07-14 12:17+0000\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -18,20 +18,6 @@ msgstr ""
 #. module: payment_ifthenpay
 #: model_terms:ir.ui.view,arch_db:payment_ifthenpay.provider_form_ifthenpay
 msgid "1234-abcd-1a2b"
-msgstr ""
-
-#. module: payment_ifthenpay
-#. odoo-python
-#: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
-msgid "; multiple order found"
-msgstr ""
-
-#. module: payment_ifthenpay
-#. odoo-python
-#: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
-msgid "; no order found"
 msgstr ""
 
 #. module: payment_ifthenpay
@@ -60,15 +46,13 @@ msgstr ""
 #. module: payment_ifthenpay
 #. odoo-python
 #: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
-msgid "A valid MB entity must be provided"
+msgid "A valid MB entity must be provided: It can only have digits"
 msgstr ""
 
 #. module: payment_ifthenpay
 #. odoo-python
 #: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
-msgid "A valid MB subentity must be provided"
+msgid "A valid MB subentity must be provided: It can only have digits"
 msgstr ""
 
 #. module: payment_ifthenpay
@@ -92,6 +76,12 @@ msgid "Code"
 msgstr ""
 
 #. module: payment_ifthenpay
+#: model:ir.model.fields,field_description:payment_ifthenpay.field_payment_provider__display_name
+#: model:ir.model.fields,field_description:payment_ifthenpay.field_payment_transaction__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: payment_ifthenpay
 #: model_terms:payment.provider,pending_msg:payment_ifthenpay.payment_provider_ifthenpay_mb
 msgid "Entity:"
 msgstr ""
@@ -104,6 +94,12 @@ msgstr ""
 #. module: payment_ifthenpay
 #: model_terms:ir.ui.view,arch_db:payment_ifthenpay.provider_form_ifthenpay
 msgid "Generate Anti-Phishing key"
+msgstr ""
+
+#. module: payment_ifthenpay
+#: model:ir.model.fields,field_description:payment_ifthenpay.field_payment_provider__id
+#: model:ir.model.fields,field_description:payment_ifthenpay.field_payment_transaction__id
+msgid "ID"
 msgstr ""
 
 #. module: payment_ifthenpay
@@ -125,8 +121,9 @@ msgid "MB Entity"
 msgstr ""
 
 #. module: payment_ifthenpay
-#: model:payment.provider,display_as:payment_ifthenpay.payment_provider_ifthenpay_mb
-msgid "MB Entity/Reference"
+#. odoo-python
+#: code:addons/payment_ifthenpay/models/payment.py:0
+msgid "MB Entity must contain digits only"
 msgstr ""
 
 #. module: payment_ifthenpay
@@ -135,8 +132,9 @@ msgid "MB Subentity"
 msgstr ""
 
 #. module: payment_ifthenpay
-#: model:payment.provider,display_as:payment_ifthenpay.payment_provider_ifthenpay_mbway
-msgid "MB WAY"
+#. odoo-python
+#: code:addons/payment_ifthenpay/models/payment.py:0
+msgid "MB Subentity must contain digits only"
 msgstr ""
 
 #. module: payment_ifthenpay
@@ -167,12 +165,6 @@ msgstr ""
 #. module: payment_ifthenpay
 #: model:payment.provider,name:payment_ifthenpay.payment_provider_ifthenpay_mb
 msgid "Multibanco (Ifthenpay)"
-msgstr ""
-
-#. module: payment_ifthenpay
-#: model_terms:payment.provider,auth_msg:payment_ifthenpay.payment_provider_ifthenpay_mb
-#: model_terms:payment.provider,auth_msg:payment_ifthenpay.payment_provider_ifthenpay_mbway
-msgid "O seu pagamento foi autorizado."
 msgstr ""
 
 #. module: payment_ifthenpay
@@ -213,57 +205,31 @@ msgstr ""
 #. module: payment_ifthenpay
 #. odoo-python
 #: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
 msgid "Required fields not filled: Backoffice Key"
 msgstr ""
 
 #. module: payment_ifthenpay
 #. odoo-python
 #: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
 msgid "Required fields not filled: MB Entity"
 msgstr ""
 
 #. module: payment_ifthenpay
 #. odoo-python
 #: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
 msgid "Required fields not filled: MB Subentity"
 msgstr ""
 
 #. module: payment_ifthenpay
 #. odoo-python
 #: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
 msgid "Required fields not filled: MB WAY Description"
 msgstr ""
 
 #. module: payment_ifthenpay
 #. odoo-python
 #: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
 msgid "Required fields not filled: MB WAY Key"
-msgstr ""
-
-#. module: payment_ifthenpay
-#. odoo-python
-#: code:addons/payment_ifthenpay/controllers/main.py:0
-#, python-format
-msgid "Selected currency not supported by current provider."
-msgstr ""
-
-#. module: payment_ifthenpay
-#. odoo-python
-#: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
-msgid "The Multibanco Entity must be a 5 digit number"
-msgstr ""
-
-#. module: payment_ifthenpay
-#. odoo-python
-#: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
-msgid "The Multibanco Sub-entity must be made of up to 3 digits"
 msgstr ""
 
 #. module: payment_ifthenpay
@@ -273,17 +239,15 @@ msgstr ""
 
 #. module: payment_ifthenpay
 #. odoo-python
-#: code:addons/payment_ifthenpay/controllers/main.py:0
-#, python-format
-msgid "Unknown Error."
+#: code:addons/payment_ifthenpay/models/payment.py:0
+msgid ""
+"You can't generate MB WAY payment request for amounts smaller than 50 cents"
 msgstr ""
 
 #. module: payment_ifthenpay
-#. odoo-python
-#: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
-msgid ""
-"You can't generate MB WAY payment request for amounts smaller than 50 cents"
+#: model_terms:payment.provider,auth_msg:payment_ifthenpay.payment_provider_ifthenpay_mb
+#: model_terms:payment.provider,auth_msg:payment_ifthenpay.payment_provider_ifthenpay_mbway
+msgid "Your payment has been authorized."
 msgstr ""
 
 #. module: payment_ifthenpay
@@ -295,14 +259,7 @@ msgstr ""
 #. module: payment_ifthenpay
 #: model_terms:payment.provider,done_msg:payment_ifthenpay.payment_provider_ifthenpay_mb
 #: model_terms:payment.provider,done_msg:payment_ifthenpay.payment_provider_ifthenpay_mbway
-msgid "Your payment has been successfully processed. Thank you!"
-msgstr ""
-
-#. module: payment_ifthenpay
-#. odoo-python
-#: code:addons/payment_ifthenpay/models/payment.py:0
-#, python-format
-msgid "received data for reference %s"
+msgid "Your payment has been processed."
 msgstr ""
 
 #. module: payment_ifthenpay

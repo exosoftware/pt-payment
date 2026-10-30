@@ -82,10 +82,9 @@ patch(PaymentForm.prototype, {
         paymentMethodCode,
         flow
     ) {
-        if (providerCode in ['mbrif', 'mbwif']) {
-            await super._prepareInlineForm(...arguments);
-        } else {
-            this._setPaymentFlow('direct');
+        if (!this.PTPaymentCodes().includes(providerCode)) {
+            return super._prepareInlineForm(...arguments);
         }
+        this._setPaymentFlow('direct');
     },
 });

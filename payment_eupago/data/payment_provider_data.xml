@@ -14,7 +14,7 @@
         <field
             name="payment_method_ids"
             eval="[Command.set([
-                         ref('payment_portugal.payment_icon_mb'),
+                         ref('payment.payment_method_multibanco'),
                      ])]"
         />
         <field name="company_id" ref="base.main_company" />
@@ -56,7 +56,7 @@
         <field
             name="payment_method_ids"
             eval="[Command.set([
-                         ref('payment_portugal.payment_icon_mbway'),
+                         ref('payment.payment_method_mbway'),
                      ])]"
         />
         <field name="company_id" ref="base.main_company" />

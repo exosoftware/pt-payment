@@ -8,7 +8,7 @@
     "name": "Payment Provider: Portugal",
     "category": "Accounting/Payment Providers",
     "summary": "A base module for portuguese payment methods",
-    "version": "19.0.4.0.0",
+    "version": "19.0.5.0.1",
     "author": "Exo Software",
     "website": "https://github.com/exosoftware/portugal-payment",
     "depends": ["sale"],

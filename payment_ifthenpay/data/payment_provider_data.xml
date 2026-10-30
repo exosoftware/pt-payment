@@ -13,7 +13,7 @@
         <field name="pt_pay_method">mb</field>
         <field
             name="payment_method_ids"
-            eval="[Command.set([ref('payment_portugal.payment_icon_mb')])]"
+            eval="[Command.set([ref('payment.payment_method_multibanco')])]"
         />
         <field name="company_id" ref="base.main_company" />
         <field name="pending_msg">
@@ -53,7 +53,7 @@
         <field name="pt_pay_method">mbway</field>
         <field
             name="payment_method_ids"
-            eval="[Command.set([ref('payment_portugal.payment_icon_mbway')])]"
+            eval="[Command.set([ref('payment.payment_method_mbway')])]"
         />
         <field name="company_id" ref="base.main_company" />
         <field name="inline_form_view_id" ref="payment_portugal.mbway_inline_form" />
